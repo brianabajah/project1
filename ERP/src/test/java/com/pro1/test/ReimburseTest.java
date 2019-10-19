@@ -1,13 +1,14 @@
 package com.pro1.test;
+
 import org.junit.Test;
-
-
 import static org.junit.Assert.*;
 
+import java.sql.Connection;
 import java.time.LocalDate;
 
-
+import com.pro1.dtbAccessors.*;
 import com.pro1.reimburse.reimbursements.*;
+import com.pro1.reimburse.users.Users;
 
 public class ReimburseTest {
 
@@ -28,7 +29,6 @@ public class ReimburseTest {
 
 	@Test
 	public void testgetReimb_submitted() {
-		System.out.println(reimb.getReimb_submitted());
 		assertTrue(reimb.getReimb_submitted() instanceof  LocalDate);
 	}
 	
@@ -74,5 +74,34 @@ public class ReimburseTest {
 		assertEquals(reimb.getReimb_type(),"lodging");
 	}
 	
+	@Test
+	public void testgetUrl() {
+		Authentication aut= new Authentication();
+		assertTrue(aut.getUrl().equals(System.getenv("URL")));
+	}
+	
+	@Test
+	public void testgetName() {
+		Authentication aut= new Authentication();
+		assertTrue(aut.getName().equals(System.getenv("NAME")));
+
+	}
+	@Test
+	public void testgetPass() {
+		Authentication aut= new Authentication();
+		assertTrue(aut.getPass().equals(System.getenv("PASS")));
+	}
+	@Test
+	public void testConnection() {
+		Connectivity con = new Connectivity();
+		System.out.println(con.getClass());
+		assertTrue(con.getCon() instanceof Connection);
+	} 
+	
+	@Test
+	public void testaddNewEmployee() {
+		Users use= new Users(0, "test", "test", "test", "test", "test");
+		
+	}
 
 }

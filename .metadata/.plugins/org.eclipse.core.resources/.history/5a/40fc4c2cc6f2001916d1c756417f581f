@@ -1,0 +1,10 @@
+package com.pro1.DAO;
+import com.pro1.dtbAccessors.Connectivity;
+import com.pro1.reimburse.users.Users;
+
+public class EmployeesAccessor {
+
+	public int addNewEmployees(Users users) {
+		
+	}
+}
