@@ -1,0 +1,5 @@
+package com.pro1.reimburse.models;
+
+public class UserRole {
+
+}

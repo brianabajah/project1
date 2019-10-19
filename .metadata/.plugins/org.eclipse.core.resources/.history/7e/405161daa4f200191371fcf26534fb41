@@ -1,0 +1,16 @@
+package com.pro1.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import com.pro1.reimburse.reimbursements.*;
+
+public class ReimburseTest {
+
+	private Reimbursement  reimb = new 
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

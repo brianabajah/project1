@@ -1,0 +1,5 @@
+package com.pro1.reimburse.users;
+
+public class UserRole {
+
+}

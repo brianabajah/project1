@@ -1,0 +1,6 @@
+package com.pro1.reimburse.users;
+
+public class UserRole {
+private int role_id;
+private String role;
+}

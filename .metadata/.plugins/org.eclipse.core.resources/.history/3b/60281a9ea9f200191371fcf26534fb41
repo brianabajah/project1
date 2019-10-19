@@ -1,0 +1,72 @@
+package com.pro1.test;
+import org.junit.Test;
+
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+
+
+import com.pro1.reimburse.reimbursements.*;
+
+public class ReimburseTest {
+
+	private Reimbursement  reimb = new Reimbursement(1, "lodging", 1, "pending", 1, 1, null, null, "more info", 1, 1);
+	
+	@Test
+	public void testgetReimb_id() {
+		
+		assertTrue(reimb.getReimb_id()==1);
+	}
+
+	@Test
+	public void testgetReimb_amount() {
+		
+		assertTrue(reimb.getReimb_amount()==1);
+	}
+
+	@Test
+	public void testgetReimb_submitted() {
+		System.out.println(reimb.getReimb_submitted());
+		assertTrue(reimb.getReimb_submitted() instanceof  LocalDate);
+	}
+	
+	@Test
+	public void  testgetReimb_resolved() {
+		assertTrue(reimb.getReimb_resolved() instanceof  LocalDate);
+	}
+
+	@Test
+	public void testgetReimb_description() {
+		
+		assertEquals(reimb.getReimb_description(),"more info");
+	}
+
+	@Test
+	public void testgetReimb_author() {
+		assertTrue(reimb.getReimb_author()== 1);
+	}
+	
+	@Test
+	public void testgetReimb_resolver() {
+		assertTrue(reimb.getReimb_resolver()== 1);
+	}
+	
+
+	public void testgetReimb_status_id() {
+		
+		assertTrue(reimb.getReimb_status_id()== 1);
+	}
+	public void testgetReimb_status() {
+		assertEquals(reimb.getReimb_status(),"pending");
+	}
+	
+	public void testgetReimb_type_id() {
+		assertTrue(reimb.getReimb_type_id()== 1);
+	}
+	public void testgetReimb_type() {
+		assertEquals(reimb.getReimb_type(),"lodging");
+	}
+	
+
+}

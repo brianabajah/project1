@@ -1,0 +1,17 @@
+package com.pro1.reimburse.reimbursements;
+
+import java.time.LocalDate;
+
+public class Reimbursement {
+private int reimb_id;
+private float reimb_amount;
+private LocalDate reimb_submitted;
+private LocalDate reimb_resolved;
+private String reimb_description;
+private int reimb_author;
+private int reimb_resolver;
+private int reimb_status_id;
+private int reimb_type_id;
+
+
+}

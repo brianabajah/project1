@@ -1,0 +1,51 @@
+package com.pro1.test;
+import org.junit.Test;
+
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+
+
+import com.pro1.reimburse.reimbursements.*;
+
+public class ReimburseTest {
+
+	private Reimbursement  reimb = new Reimbursement(1, "lodging", 1, "pending", 1, 1, null, null, "more info", 1, 1);
+	
+	@Test
+	public int getReimb_id() {
+		return reimb_id;
+	}
+
+	@Test
+	public float getReimb_amount() {
+		return reimb_amount;
+	}
+
+	@Test
+	public LocalDate getReimb_submitted() {
+		return reimb_submitted;
+	}
+	@Test
+	public LocalDate getReimb_resolved() {
+		return reimb_resolved;
+	}
+
+	@Test
+	public String getReimb_description() {
+		return reimb_description;
+	}
+
+	@Test
+	public int getReimb_author() {
+		return reimb_author;
+	}
+	
+	@Test
+	public int getReimb_resolver() {
+		return reimb_resolver;
+	}
+
+
+}

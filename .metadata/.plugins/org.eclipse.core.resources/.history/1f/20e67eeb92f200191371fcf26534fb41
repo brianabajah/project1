@@ -1,0 +1,10 @@
+package com.pro1.reimburse.users;
+
+public class Users extends UserRole {
+private String userName;
+private String password;
+private String userFirstName;
+private String userLastName;
+private String userEmail;
+
+}

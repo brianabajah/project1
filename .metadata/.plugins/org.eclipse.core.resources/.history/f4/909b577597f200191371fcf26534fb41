@@ -1,0 +1,7 @@
+package com.pro1.reimburse.reimbursements;
+
+public class ReimbursementType {
+
+private int reimb_type_id;
+private String reimb_type;
+}

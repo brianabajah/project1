@@ -1,0 +1,92 @@
+package com.pro1.reimburse.users;
+
+public class Users {
+private String userName;
+private String password;
+private String userFirstName;
+private String userLastName;
+private String userEmail;
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((password == null) ? 0 : password.hashCode());
+	result = prime * result + ((userEmail == null) ? 0 : userEmail.hashCode());
+	result = prime * result + ((userFirstName == null) ? 0 : userFirstName.hashCode());
+	result = prime * result + ((userLastName == null) ? 0 : userLastName.hashCode());
+	result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+	return result;
+}
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Users other = (Users) obj;
+	if (password == null) {
+		if (other.password != null)
+			return false;
+	} else if (!password.equals(other.password))
+		return false;
+	if (userEmail == null) {
+		if (other.userEmail != null)
+			return false;
+	} else if (!userEmail.equals(other.userEmail))
+		return false;
+	if (userFirstName == null) {
+		if (other.userFirstName != null)
+			return false;
+	} else if (!userFirstName.equals(other.userFirstName))
+		return false;
+	if (userLastName == null) {
+		if (other.userLastName != null)
+			return false;
+	} else if (!userLastName.equals(other.userLastName))
+		return false;
+	if (userName == null) {
+		if (other.userName != null)
+			return false;
+	} else if (!userName.equals(other.userName))
+		return false;
+	return true;
+}
+public String getUserName() {
+	return userName;
+}
+public void setUserName(String userName) {
+	this.userName = userName;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
+}
+public String getUserFirstName() {
+	return userFirstName;
+}
+public void setUserFirstName(String userFirstName) {
+	this.userFirstName = userFirstName;
+}
+public String getUserLastName() {
+	return userLastName;
+}
+public void setUserLastName(String userLastName) {
+	this.userLastName = userLastName;
+}
+public String getUserEmail() {
+	return userEmail;
+}
+public void setUserEmail(String userEmail) {
+	this.userEmail = userEmail;
+}
+@Override
+public String toString() {
+	// TODO Auto-generated method stub
+	return super.toString();
+}
+	
+}

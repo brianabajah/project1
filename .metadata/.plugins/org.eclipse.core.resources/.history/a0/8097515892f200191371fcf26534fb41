@@ -1,0 +1,11 @@
+package com.pro1.reimburse.users;
+
+public class UserRole {
+private boolean isEmployee;
+private boolean isFinManager;
+
+
+
+
+
+}
