@@ -15,7 +15,7 @@ public class ReimburseTest {
 
 	LocalDate tim= LocalDate.now();
 	private Reimbursement  reimb = new Reimbursement(1, "lodging", 1, "pending", 1, 1, tim, tim, "more info", 1, 1);
-	private Users user = new Users(1,1, "test", "test", "test", "test","test");
+	private Users user = new Users(1,1,"test", "test", "test", "test", "test","test");
 	
 	@Test
 	public void testgetReimb_id() {
@@ -109,6 +109,7 @@ public class ReimburseTest {
 	@Test
 	public void testgetEmployee() {
 		UserDao usdao = new UserDao();
+		System.out.println(usdao.getEmployees("test"));
 		assertTrue(usdao.getEmployees("test") instanceof Users);
  	}
 	

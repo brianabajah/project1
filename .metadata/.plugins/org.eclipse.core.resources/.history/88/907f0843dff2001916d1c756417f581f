@@ -91,13 +91,4 @@ public String toString() {
 			+ ", getPassword()=" + getPassword() + ", getUserFirstName()=" + getUserFirstName() + ", getUserEmail()="
 			+ getUserEmail() + "]";
 }
-
-
-@Override
-public int hashCode() {
-	// TODO Auto-generated method stub
-	return super.hashCode();
-}
-
-
 }

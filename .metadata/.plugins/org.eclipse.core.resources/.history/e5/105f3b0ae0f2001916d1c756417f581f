@@ -31,20 +31,4 @@ public void setReimb_type(String reimb_type) {
 }
 
 
-
-
-
-@Override
-public String toString() {
-	return "ReimbursementType [reimb_type_id=" + reimb_type_id + ", reimb_type=" + reimb_type + "]";
-}
-
-
-@Override
-public int hashCode() {
-	// TODO Auto-generated method stub
-	return super.hashCode();
-}
-
-
 }

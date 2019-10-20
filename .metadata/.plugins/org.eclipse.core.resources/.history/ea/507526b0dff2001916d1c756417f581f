@@ -98,27 +98,4 @@ public void setReimb_resolver(int reimb_resolver) {
 
 
 
-@Override
-public int hashCode() {
-	// TODO Auto-generated method stub
-	return super.hashCode();
-}
-
-
-
-
-@Override
-public String toString() {
-	return "Reimbursement [reimb_id=" + reimb_id + ", reimb_amount=" + reimb_amount + ", reimb_submitted="
-			+ reimb_submitted + ", reimb_resolved=" + reimb_resolved + ", reimb_description=" + reimb_description
-			+ ", reimb_author=" + reimb_author + ", reimb_resolver=" + reimb_resolver + ", getReimb_id()="
-			+ getReimb_id() + ", getReimb_amount()=" + getReimb_amount() + ", getReimb_submitted()="
-			+ getReimb_submitted() + ", getReimb_resolved()=" + getReimb_resolved() + ", getReimb_description()="
-			+ getReimb_description() + ", getReimb_author()=" + getReimb_author() + ", getReimb_resolver()="
-			+ getReimb_resolver() + ", hashCode()=" + hashCode() + "]";
-}
-
-
-
-
 }

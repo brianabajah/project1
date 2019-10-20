@@ -47,7 +47,7 @@ public class UserDao {
 			ResultSet rs = prep.executeQuery();
 			
 			while(rs.next()) {
-				 emp = new Users(rs.getInt("ers_users_id"),rs.getInt("user_role_id"), rs.getString("ers_username"), rs.getString("ers_password"), rs.getString("user_first_name"), rs.getString("user_last_name"),
+				 emp = new Users(rs.getInt("ers_users_id"),rs.getInt("user_role_id"), rs.getString("role"), rs.getString("ers_username"), rs.getString("ers_password"), rs.getString("user_first_name"), rs.getString("user_last_name"),
 						rs.getString("user_email"));
 			}
 			return emp;

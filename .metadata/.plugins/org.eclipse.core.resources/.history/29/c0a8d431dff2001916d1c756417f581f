@@ -35,9 +35,6 @@ public Users(int userId, int role_id, String userName, String password, String u
 }
 
 
-
-
-
 public Users(int role_id, String userName, String password, String userFirstName, String userLastName,
 		String userEmail) {
 	super(role_id);
@@ -82,22 +79,5 @@ public String getUserEmail() {
 public void setUserEmail(String userEmail) {
 	this.userEmail = userEmail;
 }
-
-@Override
-public String toString() {
-	return "Users [userId=" + userId + ", userName=" + userName + ", password=" + password + ", userFirstName="
-			+ userFirstName + ", userLastName=" + userLastName + ", userEmail=" + userEmail + ", getUserId()="
-			+ getUserId() + ", getUserLastName()=" + getUserLastName() + ", getUserName()=" + getUserName()
-			+ ", getPassword()=" + getPassword() + ", getUserFirstName()=" + getUserFirstName() + ", getUserEmail()="
-			+ getUserEmail() + "]";
-}
-
-
-@Override
-public int hashCode() {
-	// TODO Auto-generated method stub
-	return super.hashCode();
-}
-
 
 }

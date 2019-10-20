@@ -33,21 +33,6 @@ public class ReimbursementStatus  extends ReimbursementType{
 	public void setReimb_status(String reimb_status) {
 		this.reimb_status = reimb_status;
 	}
-
-
-	@Override
-	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
-	}
-
-
-	@Override
-	public String toString() {
-		return "ReimbursementStatus [reimb_status_id=" + reimb_status_id + ", reimb_status=" + reimb_status
-				+ ", getReimb_status_id()=" + getReimb_status_id() + ", getReimb_status()=" + getReimb_status()
-				+ ", hashCode()=" + hashCode() + "]";
-	}
 	
 	
 	
