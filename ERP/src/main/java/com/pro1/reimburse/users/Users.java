@@ -9,6 +9,11 @@ private String userEmail;
 
 
 
+public Users() {
+	super();
+}
+
+
 public Users(int role_id, String role, String userName, String password, String userFirstName, String userLastName,
 		String userEmail) {
 	super(role_id, role);
@@ -18,8 +23,6 @@ public Users(int role_id, String role, String userName, String password, String 
 	this.userLastName = userLastName;
 	this.userEmail = userEmail;
 }
-
-
 
 
 public Users(int role_id, String userName, String password, String userFirstName, String userLastName,

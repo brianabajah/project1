@@ -13,7 +13,8 @@ public class UserDao {
 		Connection con= conev.getCon();
 //		String[] values= {users.getRole_id(),}
 		String sql="insert into ers_users(user_role_id,ers_username,ers_password,"
-						+ "user_first_name,user_last_name,user_email) values(?,?,?,?,?,?)";
+						+ "user_first_name,user_last_name,user_email) values(?,?,?,?,?,?)"
+						+ "on conflict(user_email) do nothing";
 		
 		try {
 			PreparedStatement prep = con.prepareStatement(sql);
@@ -25,9 +26,44 @@ public class UserDao {
 			prep.setString(6, users.getUserEmail());
 			return prep.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block			
 			e.printStackTrace();
 			return 0;
 		}
 	}
+	
+	
+	public Users getEmployees(String username) {
+		Connectivity conev= new Connectivity();
+		Connection con= conev.getCon();
+		
+		String sql="select * from ers_users;";
+		
+		Users emp= new Users();
+		
+		try {
+			
+			PreparedStatement prep = con.prepareStatement(sql);
+			prep.setString(1, username);
+			ResultSet rs = prep.executeQuery();
+			return emp;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+//	public int removeEmployees(Users users) {
+//		Connectivity conev= new Connectivity();
+//		Connection con= conev.getCon();
+//		String sql="delete from ers_users where user_email=?";
+//		
+//		try {
+//			PreparedStatement prep = con.prepareStatement(sql);
+//			prep.setString(1, users.getUserEmail());
+//			return prep.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			return 0;
+//		}
+//	}
 }

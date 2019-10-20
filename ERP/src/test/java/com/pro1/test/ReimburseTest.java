@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import java.sql.Connection;
 import java.time.LocalDate;
 
+import com.pro1.DAO.UserDao;
 import com.pro1.dtbAccessors.*;
 import com.pro1.reimburse.reimbursements.*;
 import com.pro1.reimburse.users.Users;
@@ -94,14 +95,31 @@ public class ReimburseTest {
 	@Test
 	public void testConnection() {
 		Connectivity con = new Connectivity();
-		System.out.println(con.getClass());
 		assertTrue(con.getCon() instanceof Connection);
 	} 
 	
 	@Test
 	public void testaddNewEmployee() {
-		Users use= new Users(0, "test", "test", "test", "test", "test");
-		
-	}
+		Users use= new Users(1, "test", "test", "test", "test", "test");
+		UserDao usdao = new UserDao();
+		assertTrue(usdao.addNewEmployees(use)>=0);
+ 	}
+	
+	
+//	@Test 
+//	public void testremoveEmployees() {
+//		testduplicateNewEmployee();
+//		Users use= new Users(1, "test", "test", "test", "test", "test");
+//		UserDao usdao = new UserDao();
+//		assertEquals(usdao.removeEmployees(use),1);
+// 	}
+//	
+//	@Test
+//	public void testnoremoveEmployees(){
+//		testduplicateNewEmployee();
+//		Users use= new Users(1, "test", "test", "test", "test", "test");
+//		UserDao usdao = new UserDao();
+//		assertEquals(usdao.removeEmployees(use),0);
+// 	}
 
 }

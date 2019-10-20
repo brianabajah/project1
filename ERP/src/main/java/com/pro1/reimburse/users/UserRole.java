@@ -7,6 +7,10 @@ private String role;
 
 
 
+public UserRole() {
+	super();
+}
+
 public UserRole(int role_id, String role) {
 	super();
 	this.role_id = role_id;

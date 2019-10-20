@@ -1,0 +1,48 @@
+package com.pro1.DAO;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.pro1.dtbAccessors.Connectivity;
+import com.pro1.reimburse.users.Users;
+
+public class UserDao {
+
+	public int addNewEmployees(Users users) {
+		Connectivity conev= new Connectivity();
+		Connection con= conev.getCon();
+//		String[] values= {users.getRole_id(),}
+		String sql="insert into ers_users(user_role_id,ers_username,ers_password,"
+						+ "user_first_name,user_last_name,user_email) values(?,?,?,?,?,?)"
+						+ "on conflict(user_email) do noting";
+		
+		try {
+			PreparedStatement prep = con.prepareStatement(sql);
+			prep.setInt(1, users.getRole_id());
+			prep.setString(2, users.getUserName());
+			prep.setString(3, users.getPassword());
+			prep.setString(4, users.getUserFirstName());
+			prep.setString(5, users.getUserLastName());
+			prep.setString(6, users.getUserEmail());
+			return prep.executeUpdate();
+		} catch (SQLException e) {
+			return 0;
+		}
+	}
+	
+	
+	public int removeEmployees(Users users) {
+		Connectivity conev= new Connectivity();
+		Connection con= conev.getCon();
+//		String[] values= {users.getRole_id(),}
+		String sql="delete from users where user_email='?'";
+		
+		try {
+			PreparedStatement prep = con.prepareStatement(sql);
+			prep.setString(1, users.getUserEmail());
+			return prep.executeUpdate();
+		} catch (SQLException e) {
+			return 0;
+		}
+	}
+}
