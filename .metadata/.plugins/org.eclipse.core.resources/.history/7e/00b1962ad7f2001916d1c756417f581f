@@ -1,7 +1,6 @@
 package com.pro1.DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.pro1.dtbAccessors.Connectivity;
@@ -37,24 +36,34 @@ public class UserDao {
 		Connectivity conev= new Connectivity();
 		Connection con= conev.getCon();
 		
-		String sql="select * from ers_users where ers_username=?;";
+		String sql="select * from ers_users;";
 		
-		Users emp = null;
+		Users emp= new Users();
 		
-		try {			
+		try {
+			
 			PreparedStatement prep = con.prepareStatement(sql);
 			prep.setString(1, username);
 			ResultSet rs = prep.executeQuery();
-			
-			while(rs.next()) {
-				 emp = new Users(rs.getInt("ers_users_id"),rs.getInt("user_role_id"), rs.getString("role"), rs.getString("ers_username"), rs.getString("ers_password"), rs.getString("user_first_name"), rs.getString("user_last_name"),
-						rs.getString("user_email"));
-			}
 			return emp;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return emp;
+			return null;
 		}
 	}
 	
+//	public int removeEmployees(Users users) {
+//		Connectivity conev= new Connectivity();
+//		Connection con= conev.getCon();
+//		String sql="delete from ers_users where user_email=?";
+//		
+//		try {
+//			PreparedStatement prep = con.prepareStatement(sql);
+//			prep.setString(1, users.getUserEmail());
+//			return prep.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			return 0;
+//		}
+//	}
 }

@@ -115,7 +115,7 @@ public class ReimburseTest {
 	@Test
 	public void testnotgetEmployee() {
 		UserDao usdao = new UserDao();
-		assertTrue(usdao.getEmployees("CowBoyBeepBop")==null);
+		assertTrue(usdao.getEmployees("CowBoyBeepBop") instanceof Users);
  	}
 	
 	@Test

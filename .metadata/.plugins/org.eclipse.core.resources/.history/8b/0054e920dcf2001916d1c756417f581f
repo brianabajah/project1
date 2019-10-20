@@ -115,7 +115,7 @@ public class ReimburseTest {
 	@Test
 	public void testnotgetEmployee() {
 		UserDao usdao = new UserDao();
-		assertTrue(usdao.getEmployees("CowBoyBeepBop")==null);
+		assertTrue(usdao.getEmployees("CowBoyBeepBop") instanceof Users);
  	}
 	
 	@Test
@@ -141,4 +141,20 @@ public class ReimburseTest {
 	}
 
 	
+//	@Test 
+//	public void testremoveEmployees() {
+//		testduplicateNewEmployee();
+//		Users use= new Users(1, "test", "test", "test", "test", "test");
+//		UserDao usdao = new UserDao();
+//		assertEquals(usdao.removeEmployees(use),1);
+// 	}
+//	
+//	@Test
+//	public void testnoremoveEmployees(){
+//		testduplicateNewEmployee();
+//		Users use= new Users(1, "test", "test", "test", "test", "test");
+//		UserDao usdao = new UserDao();
+//		assertEquals(usdao.removeEmployees(use),0);
+// 	}
+
 }

@@ -115,30 +115,43 @@ public class ReimburseTest {
 	@Test
 	public void testnotgetEmployee() {
 		UserDao usdao = new UserDao();
-		assertTrue(usdao.getEmployees("CowBoyBeepBop")==null);
+		assertTrue(usdao.getEmployees("CowBoyBeepBop") instanceof Users);
  	}
 	
-	@Test
+	
 	public void testgetUserLastName() {
 		assertEquals(user.getUserLastName(),"test");
 	}
 
-	@Test
-	public void testgetUserName() {
+	public void getUserName() {
 		assertEquals(user.getUserName(),"test");
 	}
-	@Test
-	public void testgetPassword() {
-		assertEquals(user.getPassword(),"test");
+	public void getPassword() {
+		assertEquals(user.getUserName(),"test");
 	}
-	@Test
-	public void testgetUserFirstName() {
-		assertEquals(user.getUserFirstName(),"test");
+	pub
+	public String getUserFirstName() {
+		return userFirstName;
 	}
-	@Test
-	public void testgetUserEmail() {
-		assertEquals(user.getUserFirstName(),"test");
+	public String getUserEmail() {
+		return userEmail;
 	}
 
 	
+//	@Test 
+//	public void testremoveEmployees() {
+//		testduplicateNewEmployee();
+//		Users use= new Users(1, "test", "test", "test", "test", "test");
+//		UserDao usdao = new UserDao();
+//		assertEquals(usdao.removeEmployees(use),1);
+// 	}
+//	
+//	@Test
+//	public void testnoremoveEmployees(){
+//		testduplicateNewEmployee();
+//		Users use= new Users(1, "test", "test", "test", "test", "test");
+//		UserDao usdao = new UserDao();
+//		assertEquals(usdao.removeEmployees(use),0);
+// 	}
+
 }

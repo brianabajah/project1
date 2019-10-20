@@ -37,7 +37,7 @@ public class UserDao {
 		Connectivity conev= new Connectivity();
 		Connection con= conev.getCon();
 		
-		String sql="select * from ers_users where ers_username=?;";
+		String sql="select * from ers_users where ers_users=?;";
 		
 		Users emp = null;
 		
@@ -57,4 +57,18 @@ public class UserDao {
 		}
 	}
 	
+//	public int removeEmployees(Users users) {
+//		Connectivity conev= new Connectivity();
+//		Connection con= conev.getCon();
+//		String sql="delete from ers_users where user_email=?";
+//		
+//		try {
+//			PreparedStatement prep = con.prepareStatement(sql);
+//			prep.setString(1, users.getUserEmail());
+//			return prep.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			return 0;
+//		}
+//	}
 }

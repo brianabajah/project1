@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ReimburseTest.testgetUserName" project="ERP" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.pro1.test.ReimburseTest" time="0.0" uniqueid="[engine:junit-vintage]/[runner:com.pro1.test.ReimburseTest]">
+    <testcase name="org.junit.runner.manipulation.Filter" classname="org.junit.runner.manipulation.Filter" time="0.0" displayname="initializationError" uniqueid="[engine:junit-vintage]/[runner:com.pro1.test.ReimburseTest]/[test:initializationError(org.junit.runner.manipulation.Filter)]">
+      <error>java.lang.Exception: No tests found matching Method testgetUserName(com.pro1.test.ReimburseTest) from org.junit.vintage.engine.descriptor.RunnerRequest@4fe3c938&#13;
+	at org.junit.internal.requests.FilterRequest.getRunner(FilterRequest.java:40)&#13;
+	at org.junit.vintage.engine.discovery.TestClassRequestResolver.determineRunnerTestDescriptor(TestClassRequestResolver.java:68)&#13;
+	at org.junit.vintage.engine.discovery.TestClassRequestResolver.createRunnerTestDescriptor(TestClassRequestResolver.java:59)&#13;
+	at org.junit.vintage.engine.discovery.VintageDiscoverer.lambda$discover$0(VintageDiscoverer.java:53)&#13;
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)&#13;
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)&#13;
+	at java.util.stream.ReferencePipeline$2$1.accept(Unknown Source)&#13;
+	at java.util.Iterator.forEachRemaining(Unknown Source)&#13;
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Unknown Source)&#13;
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)&#13;
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)&#13;
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(Unknown Source)&#13;
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Unknown Source)&#13;
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)&#13;
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)&#13;
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(Unknown Source)&#13;
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(Unknown Source)&#13;
+	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)&#13;
+	at java.util.stream.ReferencePipeline.forEach(Unknown Source)&#13;
+	at org.junit.vintage.engine.discovery.VintageDiscoverer.discover(VintageDiscoverer.java:55)&#13;
+	at org.junit.vintage.engine.VintageTestEngine.discover(VintageTestEngine.java:61)&#13;
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:130)&#13;
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:117)&#13;
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90)&#13;
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:89)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

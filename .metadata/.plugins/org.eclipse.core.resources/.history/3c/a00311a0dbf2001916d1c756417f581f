@@ -15,7 +15,7 @@ public class ReimburseTest {
 
 	LocalDate tim= LocalDate.now();
 	private Reimbursement  reimb = new Reimbursement(1, "lodging", 1, "pending", 1, 1, tim, tim, "more info", 1, 1);
-	private Users user = new Users(1,1,"test", "test", "test", "test", "test","test");
+	private Users user = new Users(1,1,test,test)
 	
 	@Test
 	public void testgetReimb_id() {
@@ -101,7 +101,7 @@ public class ReimburseTest {
 	
 	@Test
 	public void testaddNewEmployee() {
-		Users use= new Users(1, "test", "test", "test", "test", "test");
+		Users use= new Users(1,1, "test", "test", "test", "test", "test");
 		UserDao usdao = new UserDao();
 		assertTrue(usdao.addNewEmployees(use)>=0);
  	}
@@ -115,30 +115,24 @@ public class ReimburseTest {
 	@Test
 	public void testnotgetEmployee() {
 		UserDao usdao = new UserDao();
-		assertTrue(usdao.getEmployees("CowBoyBeepBop")==null);
+		assertTrue(usdao.getEmployees("CowBoyBeepBop") instanceof Users);
  	}
 	
-	@Test
-	public void testgetUserLastName() {
-		assertEquals(user.getUserLastName(),"test");
-	}
-
-	@Test
-	public void testgetUserName() {
-		assertEquals(user.getUserName(),"test");
-	}
-	@Test
-	public void testgetPassword() {
-		assertEquals(user.getPassword(),"test");
-	}
-	@Test
-	public void testgetUserFirstName() {
-		assertEquals(user.getUserFirstName(),"test");
-	}
-	@Test
-	public void testgetUserEmail() {
-		assertEquals(user.getUserFirstName(),"test");
-	}
-
 	
+//	@Test 
+//	public void testremoveEmployees() {
+//		testduplicateNewEmployee();
+//		Users use= new Users(1, "test", "test", "test", "test", "test");
+//		UserDao usdao = new UserDao();
+//		assertEquals(usdao.removeEmployees(use),1);
+// 	}
+//	
+//	@Test
+//	public void testnoremoveEmployees(){
+//		testduplicateNewEmployee();
+//		Users use= new Users(1, "test", "test", "test", "test", "test");
+//		UserDao usdao = new UserDao();
+//		assertEquals(usdao.removeEmployees(use),0);
+// 	}
+
 }
