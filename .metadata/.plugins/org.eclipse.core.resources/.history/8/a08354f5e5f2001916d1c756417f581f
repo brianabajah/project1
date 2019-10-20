@@ -1,0 +1,20 @@
+package com.pro1.DAO;
+
+import java.sql.Connection;
+
+import com.pro1.dtbAccessors.Connectivity;
+import com.pro1.reimburse.reimbursements.Reimbursement;
+
+public class ReimbDao {
+	
+	public int commitReimburse(Reimbursement remb) {
+		Connectivity cnt = new Connectivity();
+		Connection con = cnt.getCon();
+//		(float reimb_amount, String reimb_description, int employee_id) 
+		String sql="insert in ers_reimbursement() values(?,?,?) ";
+		
+		return 0;
+		
+	}
+
+}

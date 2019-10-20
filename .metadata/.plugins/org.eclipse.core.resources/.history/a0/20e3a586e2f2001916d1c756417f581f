@@ -1,0 +1,11 @@
+package com.pro1.DAO;
+
+import com.pro1.reimburse.reimbursements.Reimbursement;
+
+public class ReimbDao {
+	
+	public int commitReimburse(Reimbursement remb) {
+		
+	}
+
+}

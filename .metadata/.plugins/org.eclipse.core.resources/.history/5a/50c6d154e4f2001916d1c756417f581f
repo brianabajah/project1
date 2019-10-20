@@ -12,9 +12,8 @@ public class ReimbursementStatus  extends ReimbursementType{
 	}
 	
 	
-	public ReimbursementStatus(int ers_reimbursement_type) {
-		super(ers_reimbursement_type);
-		reimb_status_id=1;
+	public ReimbursementStatus() {
+		super();
 	}
 
 

@@ -1,0 +1,31 @@
+package com.pro1.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.pro1.dtbAccessors.Connectivity;
+import com.pro1.reimburse.reimbursements.Reimbursement;
+
+public class ReimbDao {
+	
+	public int commitReimburse(Reimbursement remb) {
+		Connectivity cnt = new Connectivity();
+		Connection con = cnt.getCon();
+//		(float reimb_amount, String reimb_description, int employee_id, int ers_reimbursement_typeid)
+		
+		String sql="insert in ers_reimbursement(reimb_amount,reimb_submitted,reimb_author,reimb_status_id,reimb_type_id) values(?,?,?,?,?): ";
+		
+		try {
+			PreparedStatement ps= con.prepareStatement(sql);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+		
+	}
+
+}

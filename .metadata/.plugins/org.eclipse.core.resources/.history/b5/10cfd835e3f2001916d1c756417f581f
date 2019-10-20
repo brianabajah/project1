@@ -1,0 +1,19 @@
+package com.pro1.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import com.pro1.dtbAccessors.Connectivity;
+import com.pro1.reimburse.reimbursements.Reimbursement;
+
+public class ReimbDao {
+	
+	public int commitReimburse(Reimbursement remb) {
+		Connectivity cnt = new Connectivity();
+		Connection con = cnt.getCon();
+		
+		return 0;
+		
+	}
+
+}

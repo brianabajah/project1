@@ -12,7 +12,7 @@ public ReimbursementType(int reimb_type_id, String reimb_type) {
 }
 
 
-public ReimbursementType(int reimb_type_id) {
+public ReimbursementType() {
 	super();
 }
 

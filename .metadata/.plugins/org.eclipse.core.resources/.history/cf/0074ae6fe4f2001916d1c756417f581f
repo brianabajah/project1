@@ -29,8 +29,8 @@ public Reimbursement(int reimb_type_id, String reimb_type, int reimb_status_id, 
 
 
 
-public Reimbursement(float reimb_amount, String reimb_description, int employee_id, int ers_reimbursement_typeid) {
-	super(ers_reimbursement_typeid);
+public Reimbursement(float reimb_amount, String reimb_description, int employee_id) {
+	super();
 	this.reimb_amount = reimb_amount;
 	this.reimb_description = reimb_description;
 	this.reimb_author = employee_id;
