@@ -18,8 +18,9 @@ public class ReimbursementStatus  extends ReimbursementType{
 	}
 
 
-	public ReimbursementStatus(int reimb_type_id, String reimb_type) {
-		super(reimb_type_id, reimb_type);
+	public ReimbursementStatus(int reimb_type_id, int reimb_status_id) {
+		super(reimb_type_id);
+		this.reimb_status_id=reimb_status_id;
 	}
 
 	public int getReimb_status_id() {

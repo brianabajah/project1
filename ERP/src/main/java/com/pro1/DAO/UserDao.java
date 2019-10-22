@@ -25,10 +25,13 @@ public class UserDao {
 			prep.setString(4, users.getUserFirstName());
 			prep.setString(5, users.getUserLastName());
 			prep.setString(6, users.getUserEmail());
-			return prep.executeUpdate();
+			int ret=prep.executeUpdate();
+			con.close();
+			prep.close();
+			return ret;
 		} catch (SQLException e) {
-			e.printStackTrace();
-			return 0;
+//			e.printStackTrace();
+			return -1;
 		}
 	}
 	
@@ -36,7 +39,6 @@ public class UserDao {
 	public Users getEmployees(String username) {
 		Connectivity conev= new Connectivity();
 		Connection con= conev.getCon();
-		
 		String sql="select * from ers_users where ers_username=?;";
 		
 		Users emp = null;

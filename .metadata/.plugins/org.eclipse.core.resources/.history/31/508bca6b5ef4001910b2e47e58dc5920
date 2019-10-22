@@ -1,0 +1,112 @@
+package com.pro1.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import com.pro1.dtbAccessors.Connectivity;
+import com.pro1.reimburse.reimbursements.Reimbursement;
+public class ReimbDao {
+	
+	public int commitReimburse(Reimbursement remb) {
+		Connectivity cnt = new Connectivity();
+		Connection con = cnt.getCon();
+//		(float reimb_amount, String reimb_description, int employee_id, int ers_reimbursement_typeid)
+		
+		String sql="insert into ers_reimbursement(reimb_amount,reimb_submitted,reimb_author,reimb_status_id,reimb_type_id) values(?,?,?,?,?); ";
+		
+		try {
+			PreparedStatement ps= con.prepareStatement(sql);
+			ps.setFloat(1, remb.getReimb_amount());
+			ps.setObject(2, LocalDateTime.now());
+			ps.setInt(3,remb.getReimb_author());
+			ps.setInt(4, remb.getReimb_status_id());
+			ps.setInt(5, remb.getReimb_type_id());
+			int ret=ps.executeUpdate();
+			con.close();
+			ps.close();
+			return ret;
+			
+		} catch (SQLException e) {
+//			e.printStackTrace();
+			return -1;
+		}		
+		
+	}
+	
+	public ArrayList<Reimbursement> viewReims(Integer EmployeeId) {
+		//Empty string== allemployees opposite oneEmployee
+		Reimbursement re;
+		ArrayList<Reimbursement> list= new ArrayList<Reimbursement>();
+		Connectivity cv = new Connectivity();
+		Connection con= cv.getCon();
+		String sql;
+		PreparedStatement ps;
+		try {
+		if(EmployeeId==null ){
+			sql="select * from ers_reimbursement;";
+			ps = con.prepareStatement(sql);
+		}else {
+			sql="select * from ers_reimbursement where reimb_author=?;";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, EmployeeId);
+		}
+		
+		ResultSet rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			list.add(
+					re=new Reimbursement(rs.getInt("reimb_id"), rs.getInt("reimb_type_id"), rs.getInt("reimb_status_id"),
+							rs.getFloat("reimb_amount"), (LocalDateTime)rs.getObject("reimb_submitted"),(LocalDateTime) rs.getObject("reimb_resolved"),
+							rs.getString("reimb_description"),
+							rs.getInt("reimb_author"),(Integer) rs.getInt("reimb_resolver")	
+							));
+						re.setReimb_status(getTS("status",re.getReimb_status_id()));
+						re.setReimb_type(getTS("type"),re.getReimb_type_id());
+		}
+		ps.close();
+		con.close();
+		return list;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;			
+		}
+	}
+	public String getTS(String typeorstatus, int x) {
+		Connectivity cv = new Connectivity();
+		Connection con= cv.getCon();
+		String sql;
+		if(typeorstatus=="type") {
+			sql="select reimb_type from ers_reimbursement_type where reimb_type_id=?;";
+		}else {
+			sql="select reimb_status from ers_user_roles where reimb_status_id=?;";
+		}
+			
+		
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, x);
+			ResultSet rs = ps.executeQuery();
+			String out=null;
+			while(rs.next()) {
+				out=rs.getString(1);
+			}
+			ps.close();
+			con.close();
+			return out;
+			
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+			return null;
+		}
+			
+	}
+	
+	
+
+}

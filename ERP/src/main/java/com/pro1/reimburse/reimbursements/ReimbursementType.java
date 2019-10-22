@@ -14,6 +14,7 @@ public ReimbursementType(int reimb_type_id, String reimb_type) {
 
 public ReimbursementType(int reimb_type_id) {
 	super();
+	this.reimb_type_id = reimb_type_id;
 }
 
 

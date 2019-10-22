@@ -4,7 +4,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.sql.Connection;
-import java.time.LocalDate;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import com.pro1.DAO.*;
 import com.pro1.dtbAccessors.*;
@@ -13,9 +14,10 @@ import com.pro1.reimburse.users.Users;
 
 public class ReimburseTest {
 
-	LocalDate tim= LocalDate.now();
-	private Reimbursement  reimb = new Reimbursement(1, "lodging", 1, "pending", 1, 1, tim, tim, "more info", 1, 1);
+	Timestamp tim= Timestamp.valueOf(LocalDateTime.now());
+	private Reimbursement  reimb = new Reimbursement(1, 1, 1, 1, tim, tim, "more info", 1, 1);
 	private Users user = new Users(1,1, "test", "test", "test", "test","test");
+	ReimbDao rd= new ReimbDao();
 	
 	@Test
 	public void testgetReimb_id() {
@@ -31,12 +33,12 @@ public class ReimburseTest {
 
 	@Test
 	public void testgetReimb_submitted() {
-		assertTrue(reimb.getReimb_submitted() instanceof  LocalDate);
+		assertTrue(reimb.getReimb_submitted() instanceof  Timestamp);
 	}
 	
 	@Test
 	public void  testgetReimb_resolved() {
-		assertTrue(reimb.getReimb_resolved() instanceof  LocalDate);
+		assertTrue(reimb.getReimb_resolved() instanceof  Timestamp);
 	}
 
 	@Test
@@ -63,6 +65,7 @@ public class ReimburseTest {
 	
 	@Test
 	public void testgetReimb_status() {
+		reimb.setReimb_status("pending");
 		assertEquals(reimb.getReimb_status(),"pending");
 	}
 	
@@ -73,6 +76,7 @@ public class ReimburseTest {
 	
 	@Test
 	public void testgetReimb_type() {
+		reimb.setReimb_type("lodging");
 		assertEquals(reimb.getReimb_type(),"lodging");
 	}
 	
@@ -142,8 +146,27 @@ public class ReimburseTest {
 	
 	@Test
 	public void tectcommitDao() {
-		ReimbDao rd= new ReimbDao();
 		assertTrue(rd.commitReimburse(reimb)>=0);
+	}
+	
+	@Test
+	public void testgetTS() {
+		assertEquals(rd.getTS("type", 1),"lodging");
+	}
+	
+	@Test
+	public void testgetTSNot() {
+		assertEquals(rd.getTS("", 1),"pending");
+	}
+	
+//	@Test
+//	public void testviewReims() {
+//		assertTrue(rd.viewReims(1).size()>0);
+//	}
+	
+	@Test
+	public void testnewviewReims() {
+		assertTrue(rd.viewReims(null).size()>0);
 	}
 
 	

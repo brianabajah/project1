@@ -1,22 +1,23 @@
 package com.pro1.reimburse.reimbursements;
 
-import java.time.LocalDate;
+
+import java.sql.Timestamp;
 
 public class Reimbursement extends ReimbursementStatus {
 private int reimb_id;
 private float reimb_amount;
-private LocalDate reimb_submitted;
-private LocalDate reimb_resolved;
+private Timestamp reimb_submitted;
+private Timestamp reimb_resolved;
 private String reimb_description;
 private int reimb_author;
-private int reimb_resolver;
+private Integer reimb_resolver;
 
 
 
-public Reimbursement(int reimb_type_id, String reimb_type, int reimb_status_id, String reimb_status, int reimb_id,
-		float reimb_amount, LocalDate reimb_submitted, LocalDate reimb_resolved, String reimb_description,
-		int reimb_author, int reimb_resolver) {
-	super(reimb_type_id, reimb_type, reimb_status_id, reimb_status);
+public Reimbursement( int reimb_id, int reimb_type_id, int reimb_status_id,
+		float reimb_amount, Timestamp reimb_submitted, Timestamp reimb_resolved, String reimb_description,
+		int reimb_author, Integer reimb_resolver) {
+	super( reimb_type_id,  reimb_status_id);
 	this.reimb_id = reimb_id;
 	this.reimb_amount = reimb_amount;
 	this.reimb_submitted = reimb_submitted;
@@ -55,19 +56,19 @@ public void setReimb_amount(float reimb_amount) {
 	this.reimb_amount = reimb_amount;
 }
 
-public LocalDate getReimb_submitted() {
+public Timestamp getReimb_submitted() {
 	return reimb_submitted;
 }
 
-public void setReimb_submitted(LocalDate reimb_submitted) {
+public void setReimb_submitted(Timestamp reimb_submitted) {
 	this.reimb_submitted = reimb_submitted;
 }
 
-public LocalDate getReimb_resolved() {
+public Timestamp getReimb_resolved() {
 	return reimb_resolved;
 }
 
-public void setReimb_resolved(LocalDate reimb_resolved) {
+public void setReimb_resolved(Timestamp reimb_resolved) {
 	this.reimb_resolved = reimb_resolved;
 }
 
