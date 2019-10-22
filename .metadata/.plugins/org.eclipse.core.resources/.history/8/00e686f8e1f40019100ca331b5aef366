@@ -12,9 +12,4 @@
   <servlet-name>Main</servlet-name>
   <url-pattern>*.me</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  <servlet-name>login</servlet-name>
-  <servlet-class>com.pro1.servelts.Login</servlet-class>
-  </servlet>
 </web-app>
