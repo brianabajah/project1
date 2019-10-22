@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -15,26 +14,28 @@ public class ReimbDao {
 	
 	
 	
-	public int commitReimburse(Reimbursement remb) {
+	public void commitReimburse(Reimbursement remb) {
 		Connectivity cnt = new Connectivity();
 		Connection con = cnt.getCon();
-		String sql = "{?=call inserter(?,?,?,?,?,?)}";
+		String sql = "{?=call inserter(?,?,?,?,?)}";
 		try {
-			CallableStatement cs =con.prepareCall(sql);			
-			cs.setFloat(2, remb.getReimb_amount());
-			cs.setString(3, remb.getReimb_description());
-			cs.setObject(4, LocalDateTime.now());
-			cs.setInt(5,remb.getReimb_author());
-			cs.setInt(6, remb.getReimb_status_id());
-			cs.setInt(7, remb.getReimb_type_id());
-			cs.registerOutParameter(1, Types.INTEGER);
-			cs.execute();
-			return cs.getInt(1);
-		} catch (SQLException e) {
+			CallableStatement cs =con.prepareCall(sql);
+			cs.registerOutParameter(1, class<Integer>);
+			cs.setFloat(1, remb.getReimb_amount());
+			cs.setString(2, remb.getReimb_description());
+			cs.setObject(3, LocalDateTime.now());
+			cs.setInt(4,remb.getReimb_author());
+			cs.setInt(5, remb.getReimb_status_id());
+			cs.setInt(6, remb.getReimb_type_id());
 			
+			cs.execute();
+		} catch (SQLException e) {
 			e.printStackTrace();
-			return -1;
-		}	
+		}
+		
+		return 0;
+		
+		
 	}
 	
 	

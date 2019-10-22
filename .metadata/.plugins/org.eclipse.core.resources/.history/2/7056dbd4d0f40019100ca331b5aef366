@@ -18,23 +18,27 @@ public class ReimbDao {
 	public int commitReimburse(Reimbursement remb) {
 		Connectivity cnt = new Connectivity();
 		Connection con = cnt.getCon();
-		String sql = "{?=call inserter(?,?,?,?,?,?)}";
+		String sql = "{?=call inserter(?,?,?,?,?)}";
 		try {
-			CallableStatement cs =con.prepareCall(sql);			
+			CallableStatement cs =con.prepareCall(sql);
+			cs.registerOutParameter(1, Types.INTEGER);
 			cs.setFloat(2, remb.getReimb_amount());
 			cs.setString(3, remb.getReimb_description());
 			cs.setObject(4, LocalDateTime.now());
 			cs.setInt(5,remb.getReimb_author());
 			cs.setInt(6, remb.getReimb_status_id());
 			cs.setInt(7, remb.getReimb_type_id());
-			cs.registerOutParameter(1, Types.INTEGER);
 			cs.execute();
 			return cs.getInt(1);
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
 			return -1;
-		}	
+		}
+		
+		
+		
+		
 	}
 	
 	
